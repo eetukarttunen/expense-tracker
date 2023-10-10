@@ -1,0 +1,23 @@
+{
+    "expenses": [
+      {
+        "id": 1,
+        "day": 10,
+        "month": "October",
+        "year": 2023,
+        "category": "Groceries",
+        "amount": 50.00,
+        "description": "Weekly grocery shopping"
+      },
+      {
+        "id": 2,
+        "day": 11,
+        "month": "October",
+        "year": 2023,
+        "category": "Dining Out",
+        "amount": 30.50,
+        "description": "Dinner at a local restaurant"
+      }
+    ]
+  }
+  

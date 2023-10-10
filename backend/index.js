@@ -1,6 +1,5 @@
 const express = require('express');
 const bodyParser = require('body-parser');
-const axios = require('axios');
 const fs = require('fs');
 
 const app = express();
@@ -11,6 +10,7 @@ app.use(bodyParser.json());
 
 // Load the JSON data
 let expenseData = require('./expenses.json');
+let nextExpenseId = expenseData.expenses.length + 1; // Initialize the ID counter
 
 // Define routes
 app.get('/api/expenses', (req, res) => {
@@ -19,13 +19,14 @@ app.get('/api/expenses', (req, res) => {
 
 app.post('/api/expenses', (req, res) => {
   const newExpense = req.body;
+  newExpense.id = nextExpenseId++; // Assign a unique ID
   expenseData.expenses.push(newExpense);
   saveData();
   res.json(newExpense);
 });
 
 app.put('/api/expenses/:id', (req, res) => {
-  const id = req.params.id;
+  const id = parseInt(req.params.id);
   const updatedExpense = req.body;
   const expenseIndex = expenseData.expenses.findIndex((expense) => expense.id === id);
 
@@ -39,7 +40,7 @@ app.put('/api/expenses/:id', (req, res) => {
 });
 
 app.delete('/api/expenses/:id', (req, res) => {
-  const id = req.params.id;
+  const id = parseInt(req.params.id);
   const expenseIndex = expenseData.expenses.findIndex((expense) => expense.id === id);
 
   if (expenseIndex !== -1) {
