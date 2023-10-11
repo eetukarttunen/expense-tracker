@@ -1,12 +1,14 @@
 const express = require('express');
 const bodyParser = require('body-parser');
+const cors = require('cors'); // Import the cors middleware
 const fs = require('fs');
 
 const app = express();
 const port = 3000;
 
-// Middleware to parse JSON data
+// Middleware to parse JSON data and enable CORS
 app.use(bodyParser.json());
+app.use(cors()); // Enable CORS for all routes
 
 // Load the JSON data
 let expenseData = require('./expenses.json');

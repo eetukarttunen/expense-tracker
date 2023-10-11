@@ -1,0 +1,31 @@
+<div class="expense-list">
+    <h2>Expense List</h2>
+    <div *ngFor="let groupKey of getGroupedExpenseKeys()">
+      <h3>Expenses in {{ groupKey }}</h3>
+      <table>
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Date</th>
+            <th>Category</th>
+            <th>Amount</th>
+            <th>Description</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let expense of groupedExpenses[groupKey]">
+            <td>{{ expense.id }}</td>
+            <td>{{ getDateFormatted(expense) }}</td>
+            <td>{{ expense.category }}</td>
+            <td>{{ expense.amount | currency }}</td>
+            <td>{{ expense.description }}</td>
+            <td>
+              <button (click)="deleteExpense(expense.id)">Delete</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  

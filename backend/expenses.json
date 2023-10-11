@@ -1,23 +1,42 @@
 {
-    "expenses": [
-      {
-        "id": 1,
-        "day": 10,
-        "month": "October",
-        "year": 2023,
-        "category": "Groceries",
-        "amount": 50.00,
-        "description": "Weekly grocery shopping"
-      },
-      {
-        "id": 2,
-        "day": 11,
-        "month": "October",
-        "year": 2023,
-        "category": "Dining Out",
-        "amount": 30.50,
-        "description": "Dinner at a local restaurant"
-      }
-    ]
-  }
-  
+  "expenses": [
+    {
+      "id": 1,
+      "day": 10,
+      "month": "October",
+      "year": 1973,
+      "category": "Home",
+      "amount": 50,
+      "description": "Weekly grocery shopping"
+    },
+    {
+      "id": 2,
+      "day": 11,
+      "month": "October",
+      "year": 2023,
+      "category": "Dining Out",
+      "amount": 30.5,
+      "description": "Dinner at a local restaurant"
+    },
+    {
+      "amount": 666,
+      "category": "Groceries",
+      "description": "Banana",
+      "customDate": null,
+      "day": 24,
+      "month": "December",
+      "year": 2023,
+      "id": 19
+    },
+    {
+      "amount": 666,
+      "category": "Home",
+      "description": "Chair",
+      "customDate": null,
+      "day": 1,
+      "month": "January",
+      "year": 1956,
+      "id": 20
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+<div class="expense-add">
+  <h2>Add Expense</h2>
+  <form (submit)="addExpense()">
+    <div class="form-group">
+      <label for="amount">Price</label>
+      <input type="number" id="amount" name="amount" [(ngModel)]="newExpense.amount" required>
+    </div>
+
+    <div class="form-group">
+      <label for="category">Category</label>
+      <input type="text" id="category" name="category" [(ngModel)]="newExpense.category" required>
+    </div>
+
+    <div class="form-group">
+      <label for="description">Description</label>
+      <textarea id="description" name="description" [(ngModel)]="newExpense.description" required></textarea>
+    </div>
+
+    <label>
+      <input type="checkbox" [(ngModel)]="useCustomDate" name="useCustomDate"> Use Custom Date
+    </label>
+
+    <!-- Custom date input (conditionally displayed) -->
+    <div class="form-group" *ngIf="useCustomDate">
+      <label for="customDate">Custom Date</label>
+      <input type="date" id="customDate" name="customDate" [(ngModel)]="newExpense.customDate" required>
+    </div>
+
+    <button type="submit">Add Expense</button>
+  </form>
+</div>
