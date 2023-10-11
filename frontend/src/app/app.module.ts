@@ -12,6 +12,11 @@ import { FormsModule } from '@angular/forms';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 import { HttpClientModule } from '@angular/common/http';
+import { DashboardComponent } from './dashboard/dashboard.component';
+import { NavbarComponent } from './navbar/navbar.component';
+import { BarChartComponent } from './bar-chart/bar-chart.component';
+import { LineChartComponent } from './line-chart/line-chart.component';
+import { CircularChartComponent } from './circular-chart/circular-chart.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +24,12 @@ import { HttpClientModule } from '@angular/common/http';
     ExpenseListComponent,
     ExpenseAddComponent,
     ExpenseEditComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    DashboardComponent,
+    NavbarComponent,
+    BarChartComponent,
+    LineChartComponent,
+    CircularChartComponent
   ],
   imports: [
     BrowserModule,

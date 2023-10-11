@@ -1,0 +1,49 @@
+/* navbar.component.css */
+
+/* Navigation Bar Styles */
+.navigation {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    color: #10101d;
+  }
+  
+  .navbar-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: 1024px;
+    margin: 0 auto;
+    /*border: 3px solid green; for testing the responsibility*/
+  }
+
+nav {
+    background-color: #007bff; /* Set your desired background color */
+    color: #fff; /* Text color */
+  }
+  
+  ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: space-around;
+  }
+  
+  li {
+    margin: 0 10px; /* Adjust spacing between navigation links */
+  }
+  
+  a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+    font-size: 16px; /* Adjust as needed */
+  }
+  
+  /* Highlight the active link (e.g., current page) */
+  a.router-link-active {
+    color: yellow; /* Change to your desired active link color */
+  }
+  
