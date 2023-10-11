@@ -1,0 +1,49 @@
+<div class="page-container">
+    <div class="expense-list">
+      <h2>Expense List</h2>
+  
+      <!-- "Add new" button -->
+      <button data-toggle="modal" data-target="#addExpenseModal">Add New</button>
+      <!-- In expense-list.component.html (inside the modal) -->
+      <div class="modal-body">
+        <app-expense-add></app-expense-add>
+      </div>
+  
+  
+      <div *ngFor="let groupKey of getGroupedExpenseKeys()">
+        <h3>Expenses in {{ groupKey }}</h3>
+        <table>
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Date</th>
+              <th>Category</th>
+              <th>Amount</th>
+              <th>Description</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let expense of groupedExpenses[groupKey]">
+              <td>{{ expense.id }}</td>
+              <td>{{ getDateFormatted(expense) }}</td>
+              <td>{{ expense.category }}</td>
+              <td>{{ expense.amount | currency }}</td>
+              <td>{{ expense.description }}</td>
+              <td>
+                <button (click)="deleteExpense(expense.id)">Delete</button>
+              </td>
+            </tr>
+            <!-- Monthly total row -->
+            <tr>
+              <td colspan="3"></td>
+              <td>Total:</td>
+              <td>{{ calculateMonthlyTotal(groupedExpenses[groupKey]) | currency }}</td>
+              <td></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+  

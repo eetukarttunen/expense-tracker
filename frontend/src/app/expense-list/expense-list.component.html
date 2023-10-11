@@ -1,31 +1,28 @@
-<div class="expense-list">
+<div class="page-container">
+  <div class="expense-list">
     <h2>Expense List</h2>
-    <div *ngFor="let groupKey of getGroupedExpenseKeys()">
-      <h3>Expenses in {{ groupKey }}</h3>
-      <table>
-        <thead>
-          <tr>
-            <th>ID</th>
-            <th>Date</th>
-            <th>Category</th>
-            <th>Amount</th>
-            <th>Description</th>
-            <th>Action</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr *ngFor="let expense of groupedExpenses[groupKey]">
-            <td>{{ expense.id }}</td>
-            <td>{{ getDateFormatted(expense) }}</td>
-            <td>{{ expense.category }}</td>
-            <td>{{ expense.amount | currency }}</td>
-            <td>{{ expense.description }}</td>
-            <td>
-              <button (click)="deleteExpense(expense.id)">Delete</button>
-            </td>
-          </tr>
-        </tbody>
-      </table>
+
+    <!-- Add a dropdown to select the view -->
+    <div class="view-selector">
+      <label for="viewSelector">Select View: </label>
+      <select id="viewSelector" [(ngModel)]="currentView">
+        <option value="history">History</option>
+        <option value="currentMonth">Current Month</option>
+      </select>
+    </div>
+
+    <!-- "Add new" button and modal code... -->
+
+    <!-- Use *ngIf to conditionally render the view based on the selected option -->
+    <div *ngIf="currentView === 'history'">
+      <!-- Your history view code... -->
+      <h1>history</h1>
+      <app-expense-list-history></app-expense-list-history>
+    </div>
+
+    <div *ngIf="currentView === 'currentMonth'">
+      <!-- Your current month view code... -->
+      <h1>current</h1>
     </div>
   </div>
-  
+</div>

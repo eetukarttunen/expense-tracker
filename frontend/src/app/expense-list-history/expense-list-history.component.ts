@@ -2,11 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
 @Component({
-  selector: 'app-expense-list',
-  templateUrl: './expense-list.component.html',
-  styleUrls: ['./expense-list.component.css']
+  selector: 'app-expense-list-history',
+  templateUrl: './expense-list-history.component.html',
+  styleUrls: ['./expense-list-history.component.css']
 })
-export class ExpenseListComponent implements OnInit {
+export class ExpenseListHistoryComponent implements OnInit {
   expenses: any[] = [];
   groupedExpenses: { [key: string]: any[] } = {};
   currentView: string = 'currentMonth'; // Default to 'history'

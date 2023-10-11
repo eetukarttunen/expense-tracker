@@ -17,6 +17,8 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { BarChartComponent } from './bar-chart/bar-chart.component';
 import { LineChartComponent } from './line-chart/line-chart.component';
 import { CircularChartComponent } from './circular-chart/circular-chart.component';
+import { ExpenseListHistoryComponent } from './expense-list-history/expense-list-history.component';
+import { ExpenseListCurrentComponent } from './expense-list-current/expense-list-current.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +31,9 @@ import { CircularChartComponent } from './circular-chart/circular-chart.componen
     NavbarComponent,
     BarChartComponent,
     LineChartComponent,
-    CircularChartComponent
+    CircularChartComponent,
+    ExpenseListHistoryComponent,
+    ExpenseListCurrentComponent
   ],
   imports: [
     BrowserModule,

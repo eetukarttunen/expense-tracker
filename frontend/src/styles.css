@@ -1,11 +1,23 @@
+@import url('https://fonts.googleapis.com/css?family=Anek+Devanagari');
+
+/* Global styles */
+
 body {
     margin: 0;
     padding: 0;
     position: relative;
+    font-family: 'Anek Devanagari', cursive;
+}
+
+h1 {
+    text-align: center;
 }
 
 .page-container {
+    padding-top: 15px;
     margin: auto;
     /*border: 3px solid green; for testing the responsibility*/
     max-width: 1024px;
+    justify-content: center;
+    align-items: center;
 }
